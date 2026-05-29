@@ -1,0 +1,7 @@
+services:
+  cd-test:
+    build: .
+    container_name: cd-test
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

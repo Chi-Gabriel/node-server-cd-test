@@ -34,8 +34,6 @@ jobs:
             git pull origin main
             echo "deploying 😑"
             git fetch origin main
-            pm2 delete cd-test || true
-            pm2 start /srv/apps/node_app/server.js --name cd-test --update-env
-            pm2 save
-
+            docker compose down
+            docker compose up -d --build
             echo "Deploy Success ✅"
