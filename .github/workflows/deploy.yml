@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Starting deploy
         run: echo "Starting Deployment"
+      - name: Debug secrets
+        env:
+          VPS_IP: ${{ secrets.VPS_IP }}
+        run: |
+          echo "Length: ${#VPS_IP}"
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1
         with:
