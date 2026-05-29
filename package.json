@@ -1,0 +1,6 @@
+{
+  "name": "cd-test",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
