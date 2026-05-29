@@ -15,8 +15,10 @@ jobs:
       - name: Debug secrets
         env:
           VPS_IP: ${{ secrets.VPS_IP }}
+          VPS_USER: ${{ secrets.VPS_USER }}
         run: |
           echo "Length: ${#VPS_IP}"
+          echo "Length-User: ${#VPS_USER}"
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1
         with:
